@@ -13,7 +13,7 @@ def character_count(words):
     return count
 
 def score(word, counts):
-    return sum([counts[c] for c in word])
+    return sum([counts[c] for c in set(word)])
 
 def compatible(word, greys, yellows, greens):
     if not set(yellows) <= set(word):
