@@ -23,8 +23,13 @@ def compatible(word, greys, yellows, greens):
         if word[idx] != greens[idx]:
             return False
 
-        if idx in greys and word[idx] == greys[idx]:
-            return False
+    for idx in greys:
+        if word[idx] in greens.values():
+            if word[idx] == greys[idx]:
+                return False
+        else:
+            if word[idx] in greys.values():
+                return False
 
     return True
 
